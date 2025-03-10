@@ -14,7 +14,7 @@ const propiedades_venta = [
         nombre: "Apartamento acogedor en la montaña",
         src: "https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg",
         descripcion: "Este apartamento acogedor está situado en lo alto de una montaña con impresionantes vistas.",
-        ubicacion: "789 Mountain Road, Summit Peaks, CA 23456",
+        ubicacion: "789 Mountain Road, Summit, CA 23456",
         habitaciones: 2,
         banos: 1,
         costo: 1200,
@@ -67,13 +67,10 @@ const propiedades_venta = [
     },
 ];
 
-function Propiedades() {
-    const propiedadesSection = document.getElementById("venta");
-    propiedadesSection.innerHTML = "";
-    
-    propiedades_venta.forEach(propiedad => {
-        propiedadesSection.innerHTML += `
-            <div class="col-md-4 mb-4">
+
+let itemVentas = ""
+for (let propiedad of propiedades_venta){
+    itemVentas += ` <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="${propiedad.src}" class="card-img-top" alt="Imagen del departamento" />
                     <div class="card-body">
@@ -93,7 +90,7 @@ function Propiedades() {
                         </p> </div>
                 </div>
             </div>`;
-    });
-}
+} 
 
-document.addEventListener("DOMContentLoaded", Propiedades);
+const propVenta = document.querySelector("#venta")
+propVenta.innerHTML = itemVentas

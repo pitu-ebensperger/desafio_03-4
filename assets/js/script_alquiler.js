@@ -68,13 +68,9 @@ const propiedades_alquiler = [
 }
 ]
 
-function Propiedades() {
-  const propiedadesSection = document.getElementById("alquiler");
-  propiedadesSection.innerHTML = "";
-  
-  propiedades_alquiler.forEach(propiedad => {
-      propiedadesSection.innerHTML += `
-          <div class="col-md-4 mb-4">
+let itemAlquiler = ""
+for (let propiedad of propiedades_alquiler){
+  itemAlquiler += ` <div class="col-md-4 mb-4">
               <div class="card">
                   <img src="${propiedad.src}" class="card-img-top" alt="Imagen del departamento" />
                   <div class="card-body">
@@ -94,7 +90,7 @@ function Propiedades() {
                       </p> </div>
               </div>
           </div>`;
-  });
-}
+} 
 
-document.addEventListener("DOMContentLoaded", Propiedades);
+const propAlquiler = document.querySelector("#alquiler")
+propAlquiler.innerHTML = itemAlquiler

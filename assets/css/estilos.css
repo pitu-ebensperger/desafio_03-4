@@ -73,6 +73,7 @@ body{
 }
 
 /* MAIN */
+
 .main-section {
     background-image: url('../img/img-main.jpg');
     background-size: cover; /* La imagen cubrirá todo el ancho y largo */
@@ -98,12 +99,12 @@ body{
 
 /* SECTIONS */
 .cont-index{
-    max-height: 600px;
+    max-height: 560px;
     overflow:hidden
 }
 
 .cont-index .row{
-    padding-bottom: 50px;
+    row-gap: 100px;
 }
 
 .main-section .container{
